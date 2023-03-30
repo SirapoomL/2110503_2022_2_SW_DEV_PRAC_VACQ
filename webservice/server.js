@@ -9,8 +9,10 @@ dotenv.config({path:'./config/config.env'});
 //Cinnect to database
 connectDB();
 
+const cors = require('cors');
 // Body parser
 const app = express()
+app.use(cors());
 app.use(express.json())
 
 // Cookie parser
