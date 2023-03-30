@@ -3,4 +3,4 @@ node_modules/*
 vacqfrontend/node_modules/*
 webservice/node_modules/*
 # ignore config file
-config/config.env
+webservice/config/config.env
