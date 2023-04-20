@@ -1,5 +1,5 @@
 const express = require('express');
-const {getAppointments,getAppointment,addAppointment,updateAppointment,deleteAppointment} = require('../controllers/Appointments');
+const {getAppointments,getAppointment,addAppointment,updateAppointment,deleteAppointment} = require('../controllers/appointments');
 
 const router = express.Router({mergeParams:true});
 

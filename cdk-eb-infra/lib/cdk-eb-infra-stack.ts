@@ -22,7 +22,7 @@ export class CdkEbInfraStack extends cdk.Stack {
     });
 
     // Create a ElasticBeanStalk app.
-    const appName = 'SirapoomApp';
+    const appName = 'MyWebApp';
     const app = new elasticbeanstalk.CfnApplication(this, 'Application', {
         applicationName: appName,
     });
@@ -93,9 +93,9 @@ export class CdkEbInfraStack extends cdk.Stack {
 
     // Create an Elastic Beanstalk environment to run the application
     const elbEnv = new elasticbeanstalk.CfnEnvironment(this, 'Environment', {
-      environmentName: 'SirapoomAppEnvironment',
+      environmentName: 'MyWebAppEnvironment',
       applicationName: app.applicationName || appName,
-      solutionStackName: '64bit Amazon Linux 2 v5.8.0 running Node.js 14',
+      solutionStackName: '64bit Amazon Linux 2 v5.8.0 running Node.js 16',
       optionSettings: optionSettingProperties,
       versionLabel: appVersionProps.ref,
     });
