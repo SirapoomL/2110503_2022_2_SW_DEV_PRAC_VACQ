@@ -109,13 +109,17 @@ exports.createHospital= async (req,res,next) => {
 exports.updateHospital= async (req,res,next) => {
     // res.status(200).json({success:true, mas:`Update hospital ${req.params.id}`})
     try{
+        console.log("test1")
         const hospital = await Hospital.findByIdAndUpdate(req.params.id,req.body,{
             new: true,
             runValidators:true
         })
+        console.log("test2")
         if(!hospital){
+            console.log("test2.5")
             return res.status(400).json({success:false})
         }
+        console.log("test3")
         res.status(200).json({success:true,data:hospital})
     } catch(err){
         res.status(400).json({success:false})
